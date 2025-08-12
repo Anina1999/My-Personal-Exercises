@@ -15,4 +15,4 @@ function countWords(words) {
     return wordsObject;
 }
 
-//console.log(countWords(["apple", "banana", "apple", "orange", "banana", "apple"]));
+console.log(countWords(["apple", "banana", "apple", "orange", "banana", "apple"]));
