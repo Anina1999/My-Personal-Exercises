@@ -30,3 +30,21 @@ const purchases = [
 
 let analyze = analyzePurchases(purchases, 100);
 console.log(analyze);
+
+
+// solve #2 (more functional version using methods like reduce, map, filter)
+function analyzePurchases(purchases, threshold) {
+    const total = purchases
+        .map(p => p.price)
+        .reduce((sum, price) => sum + price, 0);
+
+    const mostExpensive = purchases
+        .slice()
+        .sort((a, b) => b.price - a.price)[0].item;
+
+    const expensiveItems = purchases
+        .filter(p => p.price > threshold)
+        .map(p => p.item);
+
+    return { total, mostExpensive, expensiveItems };
+}
