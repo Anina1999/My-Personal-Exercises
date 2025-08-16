@@ -9,3 +9,15 @@ function convertObjectToArray(obj) {
 }
 
 console.log(objectToArray({ name: "John", age: 30, city: "Sofia" }));
+
+
+//solve #2 (better one works with other keys)
+function objectToArray(obj) {
+    let array = [];
+
+    for (let key in obj) {
+        array.push(key + ": " + obj[key]);
+    }
+
+    return array;
+}
